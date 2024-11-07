@@ -17,7 +17,7 @@ Manipulasi string, Ekspresi reguler
 • Sediakan opsi untuk menyimpan teks dan hasil perhitungan ke file
 
 ## Contoh Gambar Project Setelah di Run
-![]()
+![](https://github.com/firaaaa10/Tugas5_AplikasiPenghitunganKata/blob/main/Cuplikan%20layar%202024-11-07%20194302.png)
 
 ## Indikator Penilaian:
 
