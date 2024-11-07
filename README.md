@@ -14,7 +14,7 @@ JFrame, JPanel, JLabel, JTextArea, JScrollPane, JButton
 - beberapa JLabel untuk menampilkan hasil jumlah kata, karakter, kalimat, paragraf, dan jumlah kemunculan kata.
 - JTextField untuk input kata yang ingin dicari.
 
--JButton dengan label "Hapus"
+- JButton dengan label "Hapus"
 ```
 private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {                                         
     btnHapus.addActionListener((ActionEvent e) -> {
