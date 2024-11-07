@@ -49,10 +49,10 @@ private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {
     }                                         
 ```
 Penjelasan Kode :
-- hitungText() berfungsi untuk menghitung jumlah kata, karakter, kalimat, dan paragraf dalam teks.
-- ActionListener pada tombol "Hitung" memicu fungsi hitungText() ketika tombol ditekan.
-- DocumentListener pada JTextArea memungkinkan perhitungan real-time saat teks diubah.
-  
+hitungText() berfungsi untuk menghitung jumlah kata, karakter, kalimat, dan paragraf dalam teks.
+ActionListener pada tombol "Hitung" memicu fungsi hitungText() ketika tombol ditekan.
+
+- DocumentListener pada JTextArea memungkinkan perhitungan real-time saat teks diubah. 
 ```
 // Method to count words, characters, sentences, and paragraphs
     private void hitungText() {
