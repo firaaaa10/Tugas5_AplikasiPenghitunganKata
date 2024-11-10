@@ -183,11 +183,11 @@ Dengan kode ini, sebuah dialog JFileChooser akan muncul sehingga Anda bisa memil
 
 | No  | Komponen         |  Persentase  |
 | :-: | --------------   |   :-----:    |
-|  1  | Komponen GUI     |    20    |
+|  1  | Komponen GUI     |    10    |
 |  2  | Logika Program   |    20    |
-|  3  | Kesesuaian UI    |    15    |
-|  4  | Constructor      |    15    |
-|  5  | Memenuhi Variasi |    30    |
+|  3  |  Events          |    10    |
+|  4  | Kesesuaian UI    |    20    |
+|  5  | Memenuhi Variasi |    40    |
 |     | *TOTAL*        | *100* |
 
 ## Pembuat
