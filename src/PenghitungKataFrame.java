@@ -20,9 +20,15 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
      */
     public PenghitungKataFrame() {
         initComponents();
-        
+      // Add DocumentListener to JTextArea for real-time counting
+        textAreaInputKata.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) { hitungText(); }
+            public void removeUpdate(DocumentEvent e) { hitungText(); }
+            public void insertUpdate(DocumentEvent e) { hitungText(); }
+        });    
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,10 +64,10 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 102, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tugas 5", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tempus Sans ITC", 3, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -92,13 +98,13 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(204, 153, 255));
 
-        textAreaInputKata.setBackground(new java.awt.Color(102, 102, 255));
+        textAreaInputKata.setBackground(new java.awt.Color(153, 153, 255));
         textAreaInputKata.setColumns(30);
         textAreaInputKata.setForeground(new java.awt.Color(255, 255, 255));
         textAreaInputKata.setRows(10);
         jScrollPane1.setViewportView(textAreaInputKata);
 
-        btnHitung.setBackground(new java.awt.Color(102, 102, 255));
+        btnHitung.setBackground(new java.awt.Color(102, 51, 255));
         btnHitung.setText("Hitung Kata");
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +131,9 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Pencarian Kata :");
 
+        TextFieldCari.setBackground(new java.awt.Color(153, 153, 255));
+
+        btnCari.setBackground(new java.awt.Color(153, 102, 255));
         btnCari.setText("Cari");
         btnCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +169,7 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
         jumlahparagraf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jumlahparagraf.setForeground(new java.awt.Color(255, 255, 255));
 
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setText("Keluar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +177,7 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
             }
         });
 
+        btnHapus.setBackground(new java.awt.Color(153, 204, 255));
         btnHapus.setText("Hapus");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,56 +192,55 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnHapus)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(47, 47, 47)
+                                .addComponent(jumlahkemunculankata))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))
-                                .addGap(54, 54, 54))
+                                    .addComponent(jLabel5)
+                                    .addComponent(TextFieldCari, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnHitung)
+                                        .addGap(41, 41, 41)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jlabel3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jumlahkata))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jumlahkarakter)))
+                                        .addGap(36, 36, 36)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jumlahkalimat))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jumlahparagraf))))
+                                    .addComponent(btnCari))
+                                .addGap(84, 84, 84))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnSimpan)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnSimpan)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jButton1))
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(TextFieldCari, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(btnHitung)
-                                            .addGap(41, 41, 41)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jlabel3)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(jumlahkata))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jLabel3)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(jumlahkarakter)))
-                                            .addGap(36, 36, 36)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jLabel4)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(jumlahkalimat))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jLabel7)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(jumlahparagraf))))
-                                        .addComponent(btnCari)))
-                                .addGap(84, 84, 84))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnHapus)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)
-                                .addGap(319, 319, 319))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(47, 47, 47)
-                                .addComponent(jumlahkemunculankata)))))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2)))
+                                .addGap(54, 54, 54)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -273,13 +283,13 @@ public class PenghitungKataFrame extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCari)
                             .addComponent(jLabel6))))
-                .addGap(20, 20, 20)
-                .addComponent(btnSimpan)
-                .addGap(28, 28, 28)
+                .addGap(58, 58, 58)
+                .addComponent(btnHapus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(btnHapus))
-                .addContainerGap(230, Short.MAX_VALUE))
+                    .addComponent(btnSimpan))
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
